@@ -1,0 +1,543 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101b33">
+  <meta name="description" content="Calculadora de valor proporcional para novas instalações de provedores de internet.">
+  <title>Eletronets | Calculadora de Instalações</title>
+  <style>
+:root{--bg:#f5f7fb;--navy:#111d35;--navy2:#182944;--accent:#226ae8;--accent-hover:#1557c7;--green:#16a46f;--ink:#1a273a;--muted:#738095;--line:#e8edf4;--panel:#fff;--radius:16px;--shadow:0 8px 30px rgba(35,55,85,.035)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,"Segoe UI",Roboto,Arial,sans-serif;font-size:14px}button,input,select{font:inherit}button{cursor:pointer}svg{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}.icon{width:19px;height:19px;flex-shrink:0}.icon.tiny{width:13px;height:13px}.svg-defs{position:absolute;width:0;height:0;overflow:hidden}.hidden{display:none!important}.app-shell{display:flex;min-height:100vh}.sidebar{width:252px;flex-shrink:0;background:var(--navy);color:#cad5e5;min-height:100vh;position:sticky;top:0;height:100vh;display:flex;flex-direction:column;padding:29px 18px 22px}.brand{display:flex;gap:12px;align-items:center;text-decoration:none;color:white;margin:1px 7px 53px}.brand-icon{background:linear-gradient(140deg,#28d6a1,#147cbb);width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;color:white;box-shadow:0 8px 24px rgba(29,194,161,.19)}.brand-icon .icon{width:25px;height:25px;stroke-width:2.5}.brand-name{display:flex;flex-direction:column;gap:4px}.brand-name strong{font-size:17px;font-weight:800;letter-spacing:.25px}.brand-name small{font-size:11px;color:#93a5bd;letter-spacing:.3px}.nav-caption{color:#6d809d;font-size:10px;font-weight:750;letter-spacing:1.7px;margin:0 12px 17px}.sidebar nav{display:grid;gap:6px}.nav-item{color:#a9b9ce;display:flex;align-items:center;gap:13px;padding:13px 14px;border-radius:10px;text-decoration:none;font-size:13px;font-weight:550;transition:.18s}.nav-item:hover,.nav-item:focus-visible{background:#243652;color:#fff}.nav-item.active{color:#fff;background:#274068;box-shadow:inset 3px 0 #4a96ff}.nav-item .icon{width:18px;height:18px}.sidebar-bottom{margin-top:auto;padding:16px 10px 4px;border-top:1px solid #2a3951}.offline-note{display:flex;align-items:center;font-size:12px;font-weight:700;color:#e3fbf2;gap:9px}.offline-dot{height:8px;width:8px;border-radius:50%;background:#27d99d;box-shadow:0 0 0 4px #1b4e4c}.sidebar-bottom p{line-height:1.65;color:#92a4bc;font-size:11.5px;margin:15px 0 22px}.sidebar-bottom small{color:#7689a1;font-size:10px}.main{flex:1;min-width:0}.topbar{height:79px;border-bottom:1px solid var(--line);background:#fff;display:flex;justify-content:space-between;align-items:center;padding:0 42px}.breadcrumbs{display:flex;align-items:center;gap:12px;color:#8894a5;font-size:12px}.breadcrumbs strong{color:#33425b;font-weight:650}.topbar-right{display:flex;align-items:center;gap:22px}.today{color:#68778d;font-size:12px;text-transform:capitalize}.user-avatar{border:3px solid #eaf1ff;color:#216be8;width:35px;height:35px;display:grid;place-items:center;border-radius:50%;font-weight:800;background:#dbeaff}.content-wrap{max-width:1480px;margin:0 auto;padding:36px 42px 26px}.page-title{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:26px}.eyebrow,.section-label{color:#3372d7;font-weight:800;font-size:10px;letter-spacing:1.35px;display:flex;align-items:center;gap:8px}.eyebrow-dot{display:inline-block;background:#2c8aff;width:7px;height:7px;border-radius:50%}h1,h2,h3,p{margin-top:0}.page-title h1{font-size:clamp(25px,2.4vw,32px);letter-spacing:-.85px;line-height:1.17;margin:11px 0 9px}.page-title p{color:var(--muted);line-height:1.55;max-width:750px;margin-bottom:0;font-size:13px}.title-chip{font-size:11px;font-weight:700;color:#158059;background:#eafaf3;border:1px solid #cff1e1;padding:9px 13px;border-radius:999px;display:flex;align-items:center;gap:7px;white-space:nowrap}.title-chip .icon{width:13px;height:13px}.metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-bottom:22px}.metric-card,.panel{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.metric-card{padding:22px 23px 20px}.metric-head{display:flex;justify-content:space-between;align-items:center;color:#647389;font-size:12px;font-weight:650;gap:12px}.metric-icon{height:36px;width:36px;display:grid;place-items:center;border-radius:11px}.metric-icon .icon{width:18px;height:18px}.metric-icon.blue{background:#eaf1ff;color:#3378e9}.metric-icon.green{background:#e7f8f1;color:#16976c}.metric-icon.violet{background:#f1edff;color:#8673e5}.metric-value{font-size:26px;letter-spacing:-.7px;font-weight:800;margin:8px 0 8px;font-variant-numeric:tabular-nums}.metric-sub{font-size:11px;color:#91a0b0}.calculator-layout{display:grid;grid-template-columns:minmax(0,1.13fr) minmax(0,.87fr);gap:21px;align-items:stretch;margin-bottom:22px;scroll-margin-top:18px}.form-panel,.result-panel{padding:26px 28px}.panel-header{display:flex;justify-content:space-between;align-items:flex-start;gap:15px;margin-bottom:25px}.panel-header h2,.history-heading h2,.help-section h2{font-size:19px;letter-spacing:-.3px;margin:7px 0 7px}.panel-header p,.history-heading p{font-size:12px;color:#8491a4;margin:0;line-height:1.5}.panel-icon{width:40px;height:40px;border-radius:12px;background:#eff5ff;display:grid;place-items:center;color:#3177df}.field{margin-bottom:19px;min-width:0}.field label:not(.check-row){display:block;font-size:12px;font-weight:720;margin-bottom:9px;color:#3f4c60}.optional{font-size:11px;font-weight:500;color:#a1acba}.required{color:#dc5c61}.field input,.field select{height:45px;outline:none;display:block;width:100%;border:1px solid #dfe6ef;border-radius:9px;padding:0 13px;color:#28374d;background:#fff;transition:border-color .15s,box-shadow .15s;font-size:13px}.field input:focus,.field select:focus{border-color:#6ca1f2;box-shadow:0 0 0 3px #e9f1ff}.field input::placeholder{color:#a2acb9}.field select{cursor:pointer;padding:0 9px;text-overflow:ellipsis}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.input-prefix{position:relative}.input-prefix>span{position:absolute;left:13px;top:50%;transform:translateY(-50%);font-weight:750;color:#4385e0}.input-prefix input{padding-left:41px}.segmented{display:flex;width:100%;background:#f3f6fb;border:1px solid #eaf0f5;padding:4px;border-radius:10px;gap:4px}.segment{border:0;background:transparent;border-radius:7px;padding:10px 9px;flex:1;color:#6e7c90;font-weight:700;font-size:12px}.segment.active{background:white;box-shadow:0 2px 9px rgba(29,48,75,.1);color:#2169d6}.field-hint{font-size:10px;color:#8e9aab;margin-top:7px;line-height:1.4}.derived-date{height:45px;background:#f5f8fe;border:1px solid #e6edf8;color:#3b64a3;display:flex;align-items:center;padding:0 13px;border-radius:9px;font-weight:750;font-size:13px}.settings-box{background:#f8faff;border:1px solid #e8eef9;border-radius:11px;padding:18px;margin:5px 0 19px}.settings-title{font-size:12px;font-weight:800;color:#3e567c;display:flex;align-items:center;gap:8px;margin-bottom:14px}.settings-title .icon{width:17px;height:17px;color:#4783d1}.settings-box .field{margin-bottom:12px}.settings-box .field input,.settings-box .field select{height:39px;background:#fff;font-size:11.5px}.check-row{display:flex;gap:10px;font-size:11.5px;color:#42516a;align-items:flex-start;cursor:pointer;line-height:1.5}.check-row input{accent-color:#236de2;transform:translateY(1px);width:15px;height:15px;margin:0;flex-shrink:0}.settings-box small{display:block;margin-top:12px;color:#8492a6;line-height:1.55;font-size:10.5px}.form-actions{display:flex;gap:10px;flex-wrap:wrap}.button{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:9px;font-size:12px;font-weight:750;padding:0 16px;height:43px;white-space:nowrap;border:1px solid transparent;transition:background .15s,border-color .15s,transform .15s}.button:active{transform:translateY(1px)}.button .icon{height:16px;width:16px}.button.primary{background:#2674ed;color:#fff;box-shadow:0 6px 15px rgba(25,107,226,.13)}.button.primary:hover{background:#155dce}.button.secondary{background:#f2f5fa;color:#60718a}.button.secondary:hover{background:#e7edf7}.form-error{background:#fff0ef;border:1px solid #ffcfcb;color:#b93230;padding:11px 13px;border-radius:8px;font-size:12px;margin:0 0 15px}.edit-notice{font-size:11.5px;color:#755923;background:#fff6e5;border-radius:8px;padding:11px 12px;margin-top:13px}.result-panel{display:flex;flex-direction:column}.result-head{margin-bottom:20px}.live-pill{background:#e9fbf2;color:#18855e;padding:7px 9px;display:inline-flex;align-items:center;gap:7px;border-radius:999px;font-size:10px;letter-spacing:.6px;font-weight:800;white-space:nowrap}.live-pill>span{background:#1bb778;width:6px;height:6px;border-radius:50%}.result-hero{background:linear-gradient(130deg,#13396c 0%,#0f2549 100%);border-radius:14px;color:white;padding:28px 25px 27px;overflow:hidden;position:relative}.result-hero:after{content:"";position:absolute;right:-58px;top:-60px;width:210px;height:210px;border-radius:50%;border:35px solid rgba(102,169,255,.07);pointer-events:none}.result-caption{color:#aec7ef;font-size:12px;position:relative;z-index:1}.result-amount{font-size:clamp(31px,3vw,42px);letter-spacing:-1.2px;font-weight:850;margin:9px 0;font-variant-numeric:tabular-nums;overflow-wrap:anywhere;position:relative;z-index:1}.result-period{font-size:11.5px;color:#b4c9e6;line-height:1.55;position:relative;z-index:1}.result-details{padding:12px 0 8px}.detail-row{display:flex;justify-content:space-between;gap:13px;padding:14px 0;border-bottom:1px solid #eff2f7;align-items:center}.detail-row span{display:flex;align-items:center;gap:10px;font-size:12px;color:#728198}.detail-row .icon{height:17px;width:17px;color:#91a4c0}.detail-row strong{font-size:13px;color:#2f405c;font-weight:800;text-align:right;font-variant-numeric:tabular-nums}.formula-box{padding:17px 18px;background:#f7faff;border:1px dashed #d7e5fa;border-radius:10px;margin:15px 0 14px}.formula-heading{color:#3f76ba;font-size:10px;letter-spacing:.8px;font-weight:850;margin-bottom:10px}.formula-box>div:nth-child(2){font-size:13px;font-weight:750;color:#385477;line-height:1.6;overflow-wrap:anywhere}.formula-box p{font-size:10.5px;color:#8497b0;margin:9px 0 0;line-height:1.5}.result-alert{display:flex;gap:8px;font-size:10.5px;color:#907038;line-height:1.6;padding:10px 11px;border-radius:9px;background:#fffbf2;margin-bottom:20px}.result-alert .icon{width:16px;height:16px;flex-shrink:0}.quick-actions{margin-top:auto;display:flex;gap:10px;flex-wrap:wrap}.light-button{color:#52729e;border-color:#dee8f5;background:#fff;flex:1}.light-button:hover{background:#f3f7fe}.history-panel{padding:27px 28px 15px;scroll-margin-top:18px}.history-heading{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:23px}.history-tools{display:flex;gap:9px;flex-wrap:wrap}.outline{border-color:#d7e5fb;background:#f9fbff;color:#3775cb}.outline:hover{background:#edf5ff}.danger-outline{border-color:#f5dfdf;background:#fff;color:#bb6570}.danger-outline:hover{background:#fff3f3}.searchbar{display:flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:9px;padding:0 12px;height:43px;margin-bottom:16px}.searchbar .icon{color:#9badbe;width:17px;height:17px}.searchbar input{border:0;outline:0;flex:1;min-width:0;font-size:12px;color:#314058}.searchbar input::placeholder{color:#a0abba}.searchbar span{font-size:11px;color:#93a0af;white-space:nowrap}.table-scroll{width:100%;overflow-x:auto}table{width:100%;border-collapse:collapse;min-width:710px;text-align:left}thead{background:#f8faff}thead th{font-size:10px;color:#8493a9;letter-spacing:.7px;font-weight:750;padding:13px 12px}tbody tr{border-bottom:1px solid #f1f3f7}tbody td{font-size:11.5px;color:#6c7d91;padding:17px 12px;line-height:1.5}tbody td strong{color:#34435a;font-size:12px}.main-cell strong{display:block}.main-cell small{font-size:10px;color:#9ba8b7}.money-cell{font-weight:800!important;color:#157d5c!important;font-size:13px}.days-pill{border-radius:999px;background:#eef5ff;color:#3979ca;display:inline-block;padding:4px 8px;font-size:11px;font-weight:750}.align-right{text-align:right}.row-actions{display:flex;justify-content:flex-end;gap:5px}.mini-button{display:inline-grid;place-items:center;width:29px;height:29px;background:#f5f8fc;border:1px solid #e8edf6;color:#67809d;border-radius:7px}.mini-button:hover{background:#eaf2ff;color:#2674ed}.mini-button.danger:hover{background:#fff0f0;color:#cb5664}.mini-button .icon{width:14px;height:14px}.empty-state{text-align:center;padding:26px 0 35px;color:#8794a6}.empty-illustration{display:grid;place-items:center;background:#f2f6ff;color:#82a7d9;width:52px;height:52px;border-radius:14px;margin:0 auto 13px}.empty-state h3{font-size:13px;margin:0 0 5px;color:#51637d}.empty-state p{font-size:11px;margin:0}.help-section{padding:22px 2px 25px;scroll-margin-top:18px}.help-section h2{margin-bottom:20px}.help-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}.help-item{display:flex;align-items:flex-start;gap:12px}.help-item>span{display:grid;place-items:center;height:33px;width:33px;flex-shrink:0;border-radius:9px;background:#eaf2ff;color:#407bcf;font-weight:850;font-size:11px}.help-item strong{font-size:12px}.help-item p{font-size:11px;color:#8391a2;margin:6px 0 0;line-height:1.6}.footer{display:flex;justify-content:space-between;align-items:center;gap:12px;border-top:1px solid var(--line);padding:19px 0 0;color:#95a0af;font-size:10.5px}.toast{position:fixed;z-index:20;bottom:25px;right:25px;padding:13px 17px;background:#183f35;color:#fff;border-radius:9px;box-shadow:0 10px 30px rgba(17,30,50,.18);font-weight:650;font-size:12px;opacity:0;pointer-events:none;transform:translateY(15px);transition:opacity .2s,transform .2s;max-width:min(90vw,430px)}.toast.show{opacity:1;transform:translateY(0)}.toast.error{background:#a9323c}.print-sheet{display:none}
+@media(max-width:1200px){.sidebar{width:225px}.topbar{padding:0 25px}.content-wrap{padding:30px 25px}.metrics{gap:12px}.calculator-layout{gap:14px}.form-panel,.result-panel{padding:23px 20px}.history-panel{padding:25px 20px 15px}}
+@media(max-width:1050px){.calculator-layout{grid-template-columns:1fr}.metrics{grid-template-columns:repeat(3,1fr)}.result-hero{padding:25px}.sidebar{width:205px}.brand{gap:7px;margin-left:0}.brand-name strong{font-size:15px}.title-chip{display:none}}
+@media(max-width:720px){.app-shell{display:block}.sidebar{position:static;width:100%;height:auto;min-height:0;padding:14px 18px 12px}.brand{margin:0 0 14px}.brand-icon{width:37px;height:37px}.nav-caption,.sidebar-bottom{display:none}.sidebar nav{display:flex;gap:3px;overflow-x:auto}.nav-item{padding:9px 10px;font-size:11px;gap:6px;white-space:nowrap}.nav-item .icon{width:15px;height:15px}.topbar{height:53px;padding:0 18px}.topbar-right{gap:10px}.today{font-size:11px}.user-avatar{height:29px;width:29px}.content-wrap{padding:25px 16px}.page-title{margin-bottom:20px}.page-title h1{font-size:25px}.metrics{grid-template-columns:1fr;gap:10px;margin-bottom:16px}.metric-card{padding:15px 17px}.metric-value{font-size:23px;margin:5px 0}.calculator-layout{gap:15px}.form-panel,.result-panel{padding:21px 17px}.history-panel{padding:21px 15px 10px}.history-heading{align-items:flex-start;flex-direction:column}.footer{flex-direction:column;align-items:flex-start}.help-grid{grid-template-columns:1fr;gap:17px}.result-amount{font-size:37px}}
+@media(max-width:410px){.form-grid{grid-template-columns:1fr;gap:0}.segment{font-size:11px;padding:10px 4px}.quick-actions{flex-direction:column}.quick-actions .button{width:100%}.history-tools{width:100%}.history-tools .button{flex:1}.breadcrumbs{gap:6px}.today{font-size:10px}}
+@media print{*{box-shadow:none!important}body{background:white;color:#111;font-family:Arial,sans-serif}.app-shell,.toast{display:none!important}.print-sheet{display:block!important;padding:24px 40px}.print-sheet h1{font-size:22px;margin-bottom:0;color:#153d69}.print-sheet h2{font-size:16px;border-bottom:2px solid #153d69;padding-bottom:16px;margin-top:12px}.print-sheet .print-row{display:flex;justify-content:space-between;border-bottom:1px solid #ddd;padding:12px 2px;gap:15px;font-size:13px}.print-sheet .print-row strong{text-align:right}.print-sheet .print-total{font-size:19px;font-weight:800;color:#153d69;margin-top:15px}.print-disclaimer{font-size:11px;color:#666;margin-top:40px}}
+
+</style>
+  
+</head>
+<body>
+  <svg aria-hidden="true" class="svg-defs" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.3"/><rect x="14" y="3" width="7" height="7" rx="1.3"/><rect x="3" y="14" width="7" height="7" rx="1.3"/><rect x="14" y="14" width="7" height="7" rx="1.3"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4M17 3v4M3 10h18"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-wallet" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="15" rx="2"/><path d="M3 9h18M16 14h2"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zM14 3v5h5M8 13h8M8 17h8"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 17v3h16v-3"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></symbol>
+    <symbol id="i-print" viewBox="0 0 24 24"><path d="M7 8V3h10v5M7 17H5a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M7 14h10v7H7zM17 11h.01"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6m0-10h.01"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></symbol>
+    <symbol id="i-edit" viewBox="0 0 24 24"><path d="M12 5H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7M15 5l4 4M10 14l-1 4 4-1 8-8-3-3-8 8z"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3m3 0-1 14H7L6 7M10 11v6m4-6v6"/></symbol>
+    <symbol id="i-signal" viewBox="0 0 24 24"><path d="M3 9a15 15 0 0 1 18 0M6 12a10 10 0 0 1 12 0m-9 3a5 5 0 0 1 6 0M12 19h.01"/></symbol>
+    <symbol id="i-rotate" viewBox="0 0 24 24"><path d="M3 11a9 9 0 1 0 2-5M3 4v6h6"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+  </svg>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a href="#inicio" class="brand" aria-label="Eletronets - início">
+        <span class="brand-icon"><svg class="icon"><use href="#i-signal"/></svg></span>
+        <span class="brand-name"><strong>ELETRONETS</strong><small>Central de ferramentas</small></span>
+      </a>
+      <div class="nav-caption">MENU PRINCIPAL</div>
+      <nav aria-label="Menu principal">
+        <a class="nav-item active" href="#inicio"><svg class="icon"><use href="#i-grid"/></svg><span>Visão geral</span></a>
+        <a class="nav-item" href="#calculadora"><svg class="icon"><use href="#i-cal"/></svg><span>Calculadora</span></a>
+        <a class="nav-item" href="#historico"><svg class="icon"><use href="#i-clock"/></svg><span>Histórico</span></a>
+        <a class="nav-item" href="#ajuda"><svg class="icon"><use href="#i-info"/></svg><span>Como funciona</span></a>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="offline-note"><span class="offline-dot"></span> Funciona sem internet</div>
+        <p>Seus registros ficam salvos neste navegador. Faça exportações CSV para ter uma cópia de segurança.</p>
+        <small>Ferramenta de cálculo interno • v1.0</small>
+      </div>
+    </aside>
+    <main class="main" id="inicio">
+      <header class="topbar">
+        <div class="breadcrumbs">Operacional <svg class="icon tiny"><use href="#i-chevron"/></svg> <strong>Instalações</strong></div>
+        <div class="topbar-right"><span class="today" id="today-label"></span><span class="user-avatar">E</span></div>
+      </header>
+      <div class="content-wrap">
+        <section class="page-title" aria-labelledby="page-heading">
+          <div><div class="eyebrow"><span class="eyebrow-dot"></span> FERRAMENTA OPERACIONAL</div>
+            <h1 id="page-heading">Calculadora de instalações</h1>
+            <p>Calcule os dias de consumo até o vencimento e o valor proporcional a cobrar de cada cliente.</p></div>
+          <span class="title-chip"><svg class="icon"><use href="#i-check"/></svg> Cálculo automático</span>
+        </section>
+        <section class="metrics" aria-label="Resumo do histórico">
+          <article class="metric-card"><div class="metric-head"><span>Cálculos salvos</span><span class="metric-icon blue"><svg class="icon"><use href="#i-file"/></svg></span></div><div class="metric-value" id="stat-count">0</div><div class="metric-sub">Registros neste dispositivo</div></article>
+          <article class="metric-card"><div class="metric-head"><span>Total proporcional</span><span class="metric-icon green"><svg class="icon"><use href="#i-wallet"/></svg></span></div><div class="metric-value" id="stat-total">R$ 0,00</div><div class="metric-sub">Somatório dos valores salvos</div></article>
+          <article class="metric-card"><div class="metric-head"><span>Média por cálculo</span><span class="metric-icon violet"><svg class="icon"><use href="#i-cal"/></svg></span></div><div class="metric-value" id="stat-average">R$ 0,00</div><div class="metric-sub">Valor médio proporcional</div></article>
+        </section>
+        <section id="calculadora" class="calculator-layout" aria-label="Calculadora proporcional">
+          <article class="panel form-panel">
+            <div class="panel-header"><div><div class="section-label">NOVO CÁLCULO</div><h2>Dados da instalação</h2><p>Preencha as informações do cliente.</p></div><span class="panel-icon"><svg class="icon"><use href="#i-cal"/></svg></span></div>
+            <form id="calc-form" novalidate>
+              <div class="field"><label for="client">Nome do cliente <span class="optional">(opcional)</span></label><input id="client" name="client" type="text" placeholder="Ex.: Maria da Silva" maxlength="120" autocomplete="off"></div>
+              <div class="form-grid">
+                <div class="field"><label for="monthly">Mensalidade (R$) <span class="required">*</span></label><div class="input-prefix"><span>R$</span><input id="monthly" name="monthly" type="text" inputmode="decimal" placeholder="100,00" autocomplete="off" required></div></div>
+                <div class="field"><label for="installation">Data da instalação <span class="required">*</span></label><input id="installation" name="installation" type="date" required></div>
+              </div>
+              <div class="field"><label>Como informar o vencimento?</label><div class="segmented" role="group" aria-label="Forma de vencimento"><button class="segment active" id="mode-fixed" type="button" aria-pressed="true">Dia fixo do mês</button><button class="segment" id="mode-date" type="button" aria-pressed="false">Data exata</button></div></div>
+              <div class="form-grid due-grid">
+                <div class="field" id="fixed-due-wrap"><label for="due-day">Dia do vencimento <span class="required">*</span></label><input id="due-day" type="number" min="1" max="31" value="10" inputmode="numeric" required><div class="field-hint">O primeiro vencimento é encontrado automaticamente.</div></div>
+                <div class="field hidden" id="exact-due-wrap"><label for="due-date">Data do vencimento <span class="required">*</span></label><input id="due-date" type="date"></div>
+                <div class="field"><label>Primeiro vencimento calculado</label><div class="derived-date" id="computed-due">—</div></div>
+              </div>
+              <div class="settings-box"><div class="settings-title"><svg class="icon"><use href="#i-info"/></svg> Regras de cálculo</div><div class="field"><label for="rounding">Como calcular o valor diário?</label><select id="rounding"><option value="rounded">Diária arredondada (ex.: 100 ÷ 30 = 3,33)</option><option value="precise">Valor exato, arredondar só no final</option></select></div><label class="check-row"><input type="checkbox" id="include-due"><span>Incluir também o dia do vencimento na contagem</span></label><small>A mensalidade é dividida por 30 dias, conforme a regra comercial configurada. O dia da instalação entra na contagem.</small></div>
+              <p id="form-error" class="form-error" role="alert" hidden></p>
+              <div class="form-actions"><button id="save-btn" class="button primary" type="submit"><svg class="icon"><use href="#i-check"/></svg><span id="save-label">Salvar cálculo</span></button><button id="reset-btn" class="button secondary" type="button"><svg class="icon"><use href="#i-rotate"/></svg> Limpar</button></div>
+              <div id="edit-notice" class="edit-notice" hidden>Você está editando um cálculo salvo. Ao salvar, ele será atualizado.</div>
+            </form>
+          </article>
+          <article class="panel result-panel">
+            <div class="panel-header result-head"><div><div class="section-label">RESULTADO EM TEMPO REAL</div><h2>Resumo do cálculo</h2><p>Confira antes de registrar.</p></div><span class="live-pill"><span></span> AO VIVO</span></div>
+            <div class="result-hero"><div class="result-caption">Valor proporcional a cobrar</div><div class="result-amount" id="result-total">R$ 0,00</div><div class="result-period" id="result-period">Preencha a mensalidade para calcular.</div></div>
+            <div class="result-details"><div class="detail-row"><span><svg class="icon"><use href="#i-clock"/></svg> Dias de consumo</span><strong id="result-days">—</strong></div><div class="detail-row"><span><svg class="icon"><use href="#i-wallet"/></svg> Valor da mensalidade</span><strong id="result-monthly">—</strong></div><div class="detail-row"><span><svg class="icon"><use href="#i-cal"/></svg> Valor diário utilizado</span><strong id="result-daily">—</strong></div><div class="detail-row"><span><svg class="icon"><use href="#i-cal"/></svg> Vencimento</span><strong id="result-due">—</strong></div></div>
+            <div class="formula-box"><div class="formula-heading">COMO CHEGAMOS NESTE VALOR?</div><div id="result-formula">Mensalidade ÷ 30 × dias de consumo.</div><p id="result-rule">A diária é arredondada para centavos antes da multiplicação.</p></div>
+            <div class="result-alert" id="result-alert"><svg class="icon"><use href="#i-info"/></svg><span>Este é um cálculo proporcional. Confirme a política comercial e a data de início da cobrança antes de emitir o boleto.</span></div>
+            <div class="quick-actions"><button type="button" id="copy-btn" class="button light-button"><svg class="icon"><use href="#i-copy"/></svg> Copiar resumo</button><button type="button" id="print-btn" class="button light-button"><svg class="icon"><use href="#i-print"/></svg> Imprimir ficha</button></div>
+          </article>
+        </section>
+        <section class="panel history-panel" id="historico" aria-labelledby="history-title">
+          <div class="history-heading"><div><div class="section-label">CONSULTA DE REGISTROS</div><h2 id="history-title">Histórico de cálculos</h2><p>Encontre, edite ou exporte os cálculos registrados neste navegador.</p></div><div class="history-tools"><button class="button outline" type="button" id="export-btn"><svg class="icon"><use href="#i-download"/></svg> Exportar CSV</button><button class="button danger-outline" type="button" id="clear-history-btn" title="Apagar todos os registros"><svg class="icon"><use href="#i-trash"/></svg><span>Apagar tudo</span></button></div></div>
+          <div class="searchbar"><svg class="icon"><use href="#i-search"/></svg><input id="history-search" type="search" placeholder="Buscar por cliente ou data..." aria-label="Buscar no histórico"><span id="history-count">0 registros</span></div>
+          <div class="table-scroll"><table><thead><tr><th>CLIENTE</th><th>PERÍODO</th><th>DIAS</th><th>MENSALIDADE</th><th>PROPORCIONAL</th><th class="align-right">AÇÕES</th></tr></thead><tbody id="history-body"></tbody></table></div>
+          <div class="empty-state" id="empty-state" hidden><span class="empty-illustration"><svg class="icon"><use href="#i-file"/></svg></span><h3>Nenhum cálculo encontrado</h3><p>Quando você salvar um cálculo, ele aparecerá aqui.</p></div>
+        </section>
+        <section class="help-section" id="ajuda" aria-labelledby="help-title"><div class="section-label">GUIA RÁPIDO</div><h2 id="help-title">Como utilizar no dia a dia</h2><div class="help-grid"><div class="help-item"><span>01</span><div><strong>Informe a instalação</strong><p>Digite a mensalidade e a data em que o cliente começou a utilizar a internet.</p></div></div><div class="help-item"><span>02</span><div><strong>Escolha o vencimento</strong><p>Informe o dia fixo do boleto ou a data exata do primeiro vencimento.</p></div></div><div class="help-item"><span>03</span><div><strong>Confira e salve</strong><p>Visualize dias, diária e total, depois salve, copie ou imprima o resultado.</p></div></div></div></section>
+        <footer class="footer"><span>© Eletronets • Ferramenta interna para cálculos operacionais</span><span>Dados salvos localmente • Sem sincronização entre dispositivos</span></footer>
+      </div>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <section id="print-sheet" class="print-sheet" aria-label="Ficha impressa">
+    <h1>ELETRONETS</h1><h2>Ficha de cálculo proporcional</h2>
+    <div id="print-content"></div>
+    <p class="print-disclaimer">Cálculo informativo para conferência. Aplicam-se as regras comerciais e contratuais do provedor.</p>
+  </section>
+<script>
+(() => {
+  'use strict';
+
+  const STORAGE_KEY = 'eletronets.calculadora-instalacoes.v1';
+  const formatter = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' });
+  const el = (id) => document.getElementById(id);
+  const form = el('calc-form');
+  const fields = {
+    client: el('client'), monthly: el('monthly'), installation: el('installation'),
+    dueDay: el('due-day'), dueDate: el('due-date'), rounding: el('rounding'),
+    includeDue: el('include-due'), search: el('history-search')
+  };
+  const state = { mode: 'fixed', editingId: null, records: readRecords() };
+  let currentResult = null;
+  let toastTimer;
+
+  function readRecords() {
+    try {
+      const parsed = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+      return Array.isArray(parsed) ? parsed.filter((r) => r && typeof r.id === 'string' && Number.isFinite(r.amountCents)) : [];
+    } catch (_) { return []; }
+  }
+
+  function persist(next) {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
+      state.records = next;
+      return true;
+    } catch (_) {
+      showToast('Não foi possível salvar neste navegador. Verifique o armazenamento disponível.', true);
+      return false;
+    }
+  }
+
+  const brl = (cents) => formatter.format((Number(cents) || 0) / 100);
+  function formatDate(iso) {
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(iso || '')) return '—';
+    const [year, month, day] = iso.split('-');
+    return `${day}/${month}/${year}`;
+  }
+  function todayIso() {
+    const date = new Date();
+    return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
+  }
+  function parseIso(iso) {
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(iso || '')) return null;
+    const [y, m, d] = iso.split('-').map(Number);
+    if (y < 1900 || y > 2200 || m < 1 || m > 12 || d < 1 || d > 31) return null;
+    const date = new Date(Date.UTC(y, m - 1, d));
+    if (date.getUTCFullYear() !== y || date.getUTCMonth() !== m - 1 || date.getUTCDate() !== d) return null;
+    return { y, m, d, ms: date.getTime() };
+  }
+  function isoFromParts(y, monthZeroBased, day) {
+    const d = new Date(Date.UTC(y, monthZeroBased, day));
+    return `${d.getUTCFullYear()}-${String(d.getUTCMonth() + 1).padStart(2, '0')}-${String(d.getUTCDate()).padStart(2, '0')}`;
+  }
+  function clampedDate(y, monthZeroBased, day) {
+    const lastDay = new Date(Date.UTC(y, monthZeroBased + 1, 0)).getUTCDate();
+    return isoFromParts(y, monthZeroBased, Math.min(day, lastDay));
+  }
+  function nextDue(installation, day) {
+    const start = parseIso(installation);
+    if (!start || !Number.isInteger(day) || day < 1 || day > 31) return null;
+    const candidate = clampedDate(start.y, start.m - 1, day);
+    return parseIso(candidate).ms > start.ms ? candidate : clampedDate(start.y, start.m, day);
+  }
+  // Aceita 100,00 / 100.00 / R$ 1.600,00 e retorna valores inteiros em centavos.
+  function parseMoney(text) {
+    let value = String(text || '').replace(/\s|R\$/gi, '');
+    if (!value || !/^[0-9.,]+$/.test(value)) return null;
+    if (value.includes(',') && value.includes('.')) {
+      if (value.lastIndexOf(',') > value.lastIndexOf('.')) {
+        value = value.replace(/\./g, '').replace(',', '.');
+      } else {
+        value = value.replace(/,/g, '');
+      }
+    } else if (value.includes(',')) {
+      if ((value.match(/,/g) || []).length > 1) return null;
+      value = value.replace(',', '.');
+    } else if ((value.match(/\./g) || []).length === 1 && /^\d{1,3}\.\d{3}$/.test(value)) {
+      value = value.replace('.', '');
+    } else if ((value.match(/\./g) || []).length > 1) {
+      if (!/^\d{1,3}(\.\d{3})+$/.test(value)) return null;
+      value = value.replace(/\./g, '');
+    }
+    if (!/^\d+(\.\d{1,2})?$/.test(value)) return null;
+    const cents = Math.round(Number(value) * 100);
+    return Number.isSafeInteger(cents) && cents > 0 && cents <= 100000000 ? cents : null;
+  }
+
+  function getDue() {
+    if (state.mode === 'date') return fields.dueDate.value;
+    return nextDue(fields.installation.value, Number(fields.dueDay.value));
+  }
+
+  function calculate() {
+    const start = fields.installation.value;
+    const monthlyCents = parseMoney(fields.monthly.value);
+    const due = getDue();
+    if (!monthlyCents) return { error: 'Informe uma mensalidade válida maior que zero (ex.: 100,00).' };
+    if (!parseIso(start)) return { error: 'Selecione uma data de instalação válida.' };
+    if (!parseIso(due)) return { error: 'Informe um vencimento válido, entre os dias 1 e 31, ou uma data exata.' };
+    const calendarDays = Math.round((parseIso(due).ms - parseIso(start).ms) / 86400000);
+    const days = calendarDays + (fields.includeDue.checked ? 1 : 0);
+    if (calendarDays < 0) return { error: 'O vencimento não pode ser anterior à instalação.' };
+    if (days <= 0) return { error: 'O período deve ter ao menos um dia de consumo. Confira o vencimento.' };
+    if (days > 730) return { error: 'O período ultrapassa dois anos. Confira as datas informadas.' };
+
+    // Método comercial: arredonda a diária e depois multiplica pelos dias.
+    // Método exato: mantém a fração mensalidade / 30 até o arredondamento final.
+    const dailyCents = Math.round(monthlyCents / 30);
+    const rounding = fields.rounding.value === 'precise' ? 'precise' : 'rounded';
+    const amountCents = rounding === 'precise'
+      ? Math.round((monthlyCents * days) / 30)
+      : dailyCents * days;
+    return {
+      client: fields.client.value.trim() || 'Cliente não informado',
+      monthlyCents, install: start, due, days, dailyCents, amountCents,
+      rounding, includeDue: fields.includeDue.checked, mode: state.mode,
+      dueDay: state.mode === 'fixed' ? Number(fields.dueDay.value) : null,
+      dueDate: state.mode === 'date' ? fields.dueDate.value : null
+    };
+  }
+
+  function renderPreview() {
+    const due = getDue();
+    el('computed-due').textContent = parseIso(due) ? formatDate(due) : '—';
+    const result = calculate();
+    currentResult = result.error ? null : result;
+    el('result-total').textContent = result.error ? 'R$ 0,00' : brl(result.amountCents);
+    el('result-days').textContent = result.error ? '—' : `${result.days} ${result.days === 1 ? 'dia' : 'dias'}`;
+    el('result-monthly').textContent = result.error ? '—' : brl(result.monthlyCents);
+    el('result-daily').textContent = result.error ? '—' : brl(result.dailyCents);
+    el('result-due').textContent = parseIso(due) ? formatDate(due) : '—';
+    el('result-period').textContent = result.error
+      ? 'Informe os dados para visualizar o proporcional.'
+      : `${formatDate(result.install)} até ${formatDate(result.due)} • ${result.days} ${result.days === 1 ? 'dia' : 'dias'} de consumo`;
+    el('result-formula').textContent = result.error
+      ? 'Mensalidade ÷ 30 × dias de consumo.'
+      : result.rounding === 'rounded'
+        ? `${brl(result.monthlyCents)} ÷ 30 ≈ ${brl(result.dailyCents)}; ${brl(result.dailyCents)} × ${result.days} = ${brl(result.amountCents)}`
+        : `${brl(result.monthlyCents)} ÷ 30 × ${result.days} = ${brl(result.amountCents)}`;
+    el('result-rule').textContent = fields.rounding.value === 'precise'
+      ? 'Cálculo exato: o arredondamento acontece somente no valor final.'
+      : 'Cálculo comercial: a diária é arredondada para centavos antes da multiplicação.';
+    el('result-alert').innerHTML = `<svg class="icon"><use href="#i-info"/></svg><span>${result.error
+      ? 'Preencha os campos para conferir o valor proporcional.'
+      : result.days > 30
+        ? 'Atenção: o período excede 30 dias e pode gerar um valor maior que a mensalidade. Confira se as datas estão corretas.'
+        : 'O dia da instalação entra na contagem; o vencimento ' + (result.includeDue ? 'também entra.' : 'não entra.') + ' Confirme sua política comercial antes de emitir o boleto.'}</span>`;
+    return result;
+  }
+
+  function setMode(mode) {
+    state.mode = mode === 'date' ? 'date' : 'fixed';
+    const fixed = state.mode === 'fixed';
+    el('fixed-due-wrap').classList.toggle('hidden', !fixed);
+    el('exact-due-wrap').classList.toggle('hidden', fixed);
+    el('mode-fixed').classList.toggle('active', fixed);
+    el('mode-date').classList.toggle('active', !fixed);
+    el('mode-fixed').setAttribute('aria-pressed', String(fixed));
+    el('mode-date').setAttribute('aria-pressed', String(!fixed));
+    fields.dueDay.required = fixed;
+    fields.dueDate.required = !fixed;
+    if (!fixed && !fields.dueDate.value) fields.dueDate.value = nextDue(fields.installation.value, Number(fields.dueDay.value)) || '';
+    renderPreview();
+  }
+
+  function showToast(message, isError = false) {
+    const toast = el('toast');
+    clearTimeout(toastTimer);
+    toast.textContent = message;
+    toast.className = `toast show${isError ? ' error' : ''}`;
+    toastTimer = setTimeout(() => { toast.className = 'toast'; }, 3500);
+  }
+
+  function showError(message) {
+    const error = el('form-error');
+    error.textContent = message;
+    error.hidden = false;
+    showToast(message, true);
+  }
+  function clearError() { el('form-error').hidden = true; }
+
+  function resetForm() {
+    form.reset();
+    fields.installation.value = todayIso();
+    fields.dueDay.value = '10';
+    fields.dueDate.value = '';
+    fields.rounding.value = 'rounded';
+    fields.includeDue.checked = false;
+    state.editingId = null;
+    el('save-label').textContent = 'Salvar cálculo';
+    el('edit-notice').hidden = true;
+    clearError();
+    setMode('fixed');
+  }
+
+  function saveCalculation(event) {
+    event.preventDefault();
+    clearError();
+    const result = calculate();
+    if (result.error) { showError(result.error); return; }
+    const now = new Date().toISOString();
+    let next;
+    let message;
+    if (state.editingId) {
+      next = state.records.map((old) => old.id === state.editingId ? {
+        ...result, id: old.id, createdAt: old.createdAt, updatedAt: now
+      } : old);
+      message = 'Cálculo atualizado com sucesso.';
+    } else {
+      const id = `${Date.now()}-${Math.floor(Math.random() * 1e9)}`;
+      next = [{ ...result, id, createdAt: now, updatedAt: now }, ...state.records];
+      message = 'Cálculo salvo neste navegador.';
+    }
+    if (!persist(next)) return;
+    renderHistory();
+    renderStats();
+    showToast(message);
+    resetForm();
+  }
+
+  function esc(text) {
+    return String(text ?? '').replace(/[&<>"']/g, (char) => ({
+      '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+    }[char]));
+  }
+
+  function renderStats() {
+    const count = state.records.length;
+    const total = state.records.reduce((sum, r) => sum + r.amountCents, 0);
+    el('stat-count').textContent = String(count);
+    el('stat-total').textContent = brl(total);
+    el('stat-average').textContent = brl(count ? Math.round(total / count) : 0);
+  }
+
+  function visibleRecords() {
+    const q = fields.search.value.trim().toLocaleLowerCase('pt-BR');
+    const sorted = [...state.records].sort((a, b) => (b.updatedAt || '').localeCompare(a.updatedAt || ''));
+    if (!q) return sorted;
+    return sorted.filter((r) => [r.client, r.install, r.due, formatDate(r.install), formatDate(r.due)].some((v) => String(v || '').toLocaleLowerCase('pt-BR').includes(q)));
+  }
+
+  function renderHistory() {
+    const rows = visibleRecords();
+    el('history-count').textContent = `${rows.length} ${rows.length === 1 ? 'registro' : 'registros'}`;
+    el('history-body').innerHTML = rows.map((r) => `
+      <tr>
+        <td class="main-cell"><strong>${esc(r.client)}</strong><small>Salvo em ${formatDate((r.createdAt || '').slice(0, 10))}</small></td>
+        <td>${formatDate(r.install)} <span aria-hidden="true">→</span> ${formatDate(r.due)}</td>
+        <td><span class="days-pill">${r.days} ${r.days === 1 ? 'dia' : 'dias'}</span></td>
+        <td><strong>${brl(r.monthlyCents)}</strong></td>
+        <td class="money-cell">${brl(r.amountCents)}</td>
+        <td class="align-right"><div class="row-actions">
+          <button type="button" class="mini-button" data-action="copy" data-id="${esc(r.id)}" title="Copiar resumo" aria-label="Copiar resumo de ${esc(r.client)}"><svg class="icon"><use href="#i-copy"/></svg></button>
+          <button type="button" class="mini-button" data-action="print" data-id="${esc(r.id)}" title="Imprimir ficha" aria-label="Imprimir ficha de ${esc(r.client)}"><svg class="icon"><use href="#i-print"/></svg></button>
+          <button type="button" class="mini-button" data-action="edit" data-id="${esc(r.id)}" title="Editar" aria-label="Editar ${esc(r.client)}"><svg class="icon"><use href="#i-edit"/></svg></button>
+          <button type="button" class="mini-button danger" data-action="remove" data-id="${esc(r.id)}" title="Excluir" aria-label="Excluir ${esc(r.client)}"><svg class="icon"><use href="#i-trash"/></svg></button>
+        </div></td>
+      </tr>`).join('');
+    el('empty-state').hidden = rows.length > 0;
+  }
+
+  function editRecord(record) {
+    state.editingId = record.id;
+    fields.client.value = record.client === 'Cliente não informado' ? '' : record.client;
+    fields.monthly.value = (record.monthlyCents / 100).toFixed(2).replace('.', ',');
+    fields.installation.value = record.install;
+    fields.dueDay.value = String(record.dueDay || 10);
+    fields.dueDate.value = record.dueDate || record.due;
+    fields.rounding.value = record.rounding === 'precise' ? 'precise' : 'rounded';
+    fields.includeDue.checked = Boolean(record.includeDue);
+    setMode(record.mode);
+    el('save-label').textContent = 'Atualizar cálculo';
+    el('edit-notice').hidden = false;
+    clearError();
+    el('calculadora').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    fields.client.focus({ preventScroll: true });
+  }
+
+  function removeRecord(record) {
+    if (!confirm(`Excluir o cálculo de "${record.client}"?`)) return;
+    if (!persist(state.records.filter((r) => r.id !== record.id))) return;
+    if (state.editingId === record.id) resetForm();
+    renderHistory(); renderStats(); showToast('Cálculo excluído.');
+  }
+
+  function clearHistory() {
+    if (!state.records.length) { showToast('Não há registros para apagar.'); return; }
+    if (!confirm(`Apagar permanentemente os ${state.records.length} cálculos salvos neste navegador?\n\nRecomendação: exporte antes um arquivo CSV.`)) return;
+    if (!persist([])) return;
+    if (state.editingId) resetForm();
+    renderHistory(); renderStats(); showToast('Histórico apagado.');
+  }
+
+  function summary(record) {
+    const client = record.client || 'Cliente não informado';
+    const method = record.rounding === 'precise' ? 'Valor exato, arredondado no final' : 'Diária arredondada';
+    return [
+      'ELETRONETS — CÁLCULO PROPORCIONAL',
+      `Cliente: ${client}`,
+      `Instalação: ${formatDate(record.install)}`,
+      `Vencimento: ${formatDate(record.due)}`,
+      `Dias de consumo: ${record.days}`,
+      `Mensalidade: ${brl(record.monthlyCents)}`,
+      `Diária estimada: ${brl(record.dailyCents)}`,
+      `Regra: Mensalidade / 30 (${method})`,
+      `Dia do vencimento incluído: ${record.includeDue ? 'Sim' : 'Não'}`,
+      `VALOR PROPORCIONAL: ${brl(record.amountCents)}`,
+      'Cálculo para conferência interna, sujeito às regras comerciais.'
+    ].join('\n');
+  }
+
+  async function copySummary(record) {
+    if (!record) { showToast('Preencha os dados para copiar o cálculo.', true); return; }
+    const text = summary(record);
+    try {
+      if (!navigator.clipboard?.writeText) throw new Error('Indisponível');
+      await navigator.clipboard.writeText(text);
+      showToast('Resumo copiado!');
+    } catch (_) {
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.style.position = 'fixed';
+      textarea.style.opacity = '0';
+      document.body.appendChild(textarea);
+      textarea.focus(); textarea.select();
+      const copied = document.execCommand('copy');
+      textarea.remove();
+      showToast(copied ? 'Resumo copiado!' : 'Não foi possível copiar automaticamente.', !copied);
+    }
+  }
+
+  function printSummary(record) {
+    if (!record) { showToast('Preencha os dados para imprimir a ficha.', true); return; }
+    const rows = [
+      ['Cliente', record.client],
+      ['Data da instalação', formatDate(record.install)],
+      ['Data do vencimento', formatDate(record.due)],
+      ['Dias de consumo', String(record.days)],
+      ['Mensalidade', brl(record.monthlyCents)],
+      ['Diária estimada', brl(record.dailyCents)],
+      ['Cálculo', record.rounding === 'precise' ? 'Mensalidade ÷ 30 × dias (arredondar no final)' : 'Diária arredondada × dias'],
+      ['Inclui dia do vencimento', record.includeDue ? 'Sim' : 'Não']
+    ];
+    el('print-content').innerHTML = rows.map(([label, value]) => `<div class="print-row"><span>${esc(label)}</span><strong>${esc(value)}</strong></div>`).join('') +
+      `<div class="print-row print-total"><span>VALOR PROPORCIONAL</span><strong>${esc(brl(record.amountCents))}</strong></div>`;
+    window.print();
+  }
+
+  function csvSafeText(value) {
+    let text = String(value ?? '');
+    // Evita interpretações como fórmulas maliciosas ao abrir no Excel.
+    if (/^\s*[=+\-@]/.test(text)) text = "'" + text;
+    return '"' + text.replace(/"/g, '""') + '"';
+  }
+  function csvAmount(cents) { return (cents / 100).toFixed(2).replace('.', ','); }
+  function exportCsv() {
+    if (!state.records.length) { showToast('Salve um cálculo antes de exportar.', true); return; }
+    const columns = ['Cliente','Instalação','Vencimento','Dias de consumo','Mensalidade (R$)','Diária (R$)','Valor proporcional (R$)','Forma de vencimento','Regra de arredondamento','Incluir dia do vencimento','Registrado em'];
+    const lines = [columns, ...[...state.records].reverse().map((r) => [
+      r.client, formatDate(r.install), formatDate(r.due), String(r.days), csvAmount(r.monthlyCents),
+      csvAmount(r.dailyCents), csvAmount(r.amountCents), r.mode === 'fixed' ? 'Dia fixo' : 'Data exata',
+      r.rounding === 'precise' ? 'Exato' : 'Diária arredondada', r.includeDue ? 'Sim' : 'Não',
+      formatDate((r.createdAt || '').slice(0, 10))
+    ])];
+    const csv = '\ufeff' + lines.map((row) => row.map(csvSafeText).join(';')).join('\r\n');
+    const url = URL.createObjectURL(new Blob([csv], { type: 'text/csv;charset=utf-8;' }));
+    const anchor = document.createElement('a');
+    anchor.href = url;
+    anchor.download = `eletronets_calculos_${todayIso()}.csv`;
+    document.body.append(anchor); anchor.click(); anchor.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+    showToast('Relatório CSV exportado.');
+  }
+
+  function bindEvents() {
+    ['client','monthly','installation','due-day','due-date','rounding','include-due'].forEach((id) => {
+      el(id).addEventListener('input', () => { clearError(); renderPreview(); });
+      el(id).addEventListener('change', () => { clearError(); renderPreview(); });
+    });
+    el('mode-fixed').addEventListener('click', () => setMode('fixed'));
+    el('mode-date').addEventListener('click', () => setMode('date'));
+    form.addEventListener('submit', saveCalculation);
+    el('reset-btn').addEventListener('click', resetForm);
+    el('copy-btn').addEventListener('click', () => copySummary(currentResult));
+    el('print-btn').addEventListener('click', () => printSummary(currentResult));
+    fields.search.addEventListener('input', renderHistory);
+    el('clear-history-btn').addEventListener('click', clearHistory);
+    el('export-btn').addEventListener('click', exportCsv);
+    el('history-body').addEventListener('click', (e) => {
+      const button = e.target.closest('button[data-action]');
+      if (!button) return;
+      const record = state.records.find((r) => r.id === button.dataset.id);
+      if (!record) return;
+      switch (button.dataset.action) {
+        case 'edit': editRecord(record); break;
+        case 'remove': removeRecord(record); break;
+        case 'copy': copySummary(record); break;
+        case 'print': printSummary(record); break;
+      }
+    });
+    document.querySelectorAll('.nav-item').forEach((link) => link.addEventListener('click', () => {
+      document.querySelectorAll('.nav-item').forEach((item) => item.classList.remove('active'));
+      link.classList.add('active');
+    }));
+  }
+
+  el('today-label').textContent = new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' }).format(new Date());
+  bindEvents();
+  resetForm();
+  renderStats();
+  renderHistory();
+})();
+
+</script>
+</body>
+</html>
